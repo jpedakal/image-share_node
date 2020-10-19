@@ -1,6 +1,7 @@
 const { MongoClient } = require('mongodb');
 const fs = require('fs');
-
+const url = process.env.mongoURL;
+const dbName = process.env.dbName;
 var myDB;
 
 var db_options = {
@@ -13,14 +14,12 @@ var db_options = {
 };
 
 function connect() {
-    
-    const url = json.MongoDB.mongoURL;
-
     if (myDB === undefined) {
         MongoClient.connect(url, db_options, (err, client) => {
             if (err) {
                 console.log('Error while connecting to database' + err);
-            }
+            } 
+            const db = client.db(dbName);
             myDB = db;
             console.log('Database connected successfully');
         });
