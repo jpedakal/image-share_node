@@ -6,6 +6,8 @@ const mongo = require('../database/mongo_db');
 router.post('/add_product', (req, res) => {
 
     const payload = req.body;
+    payload.isAdmin = true;
+    payload.timestamp = new Date();
 
     mongo.insertDocuments('products', payload)
         .then(data => res.status(200).json(data))
