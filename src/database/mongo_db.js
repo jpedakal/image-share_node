@@ -95,10 +95,10 @@ var findDocumentsById = function (collectionName, filterConditon) {
     });
 };
 
-module.exports = connect;
-module.exports = insertDocuments;
-module.exports = findDocuments;
-module.exports = findDocumentsById;
-module.exports = updateDocument;
-module.exports = deleteDocument;
-module.exports = authentication;
+exports.connect = connect;
+exports.insertDocuments = insertDocuments;
+exports.findDocuments = findDocuments;
+exports.findDocumentsById = findDocumentsById;
+exports.updateDocument = updateDocument;
+exports.deleteDocument = deleteDocument;
+exports.authentication = authentication;
