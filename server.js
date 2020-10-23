@@ -1,8 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-require('dotenv').config();
-const mongo = require('./src/database/mongo_db');
+require('dotenv').config()
+const mongo = require('./src/database/mongo_db.js');
 const addProduct = require('./src/api/add_product');
 const fetchProduct = require('./src/api/fetch_product');
 const fetchProductById = require('./src/api/fetch_productById');

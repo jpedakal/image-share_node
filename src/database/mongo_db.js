@@ -1,5 +1,4 @@
 const { MongoClient } = require('mongodb');
-const fs = require('fs');
 const url = process.env.mongoURL;
 const dbName = process.env.dbName;
 var myDB;
@@ -18,7 +17,7 @@ function connect() {
         MongoClient.connect(url, db_options, (err, client) => {
             if (err) {
                 console.log('Error while connecting to database' + err);
-            } 
+            }
             const db = client.db(dbName);
             myDB = db;
             console.log('Database connected successfully');
@@ -96,10 +95,10 @@ var findDocumentsById = function (collectionName, filterConditon) {
     });
 };
 
-exports.connect = connect;
-exports.insertDocuments = insertDocuments;
-exports.findDocuments = findDocuments;
-exports.findDocumentsById = findDocumentsById;
-exports.updateDocument = updateDocument;
-exports.deleteDocument = deleteDocument;
-exports.authentication = authentication;
+module.exports = connect;
+module.exports = insertDocuments;
+module.exports = findDocuments;
+module.exports = findDocumentsById;
+module.exports = updateDocument;
+module.exports = deleteDocument;
+module.exports = authentication;
