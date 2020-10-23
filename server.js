@@ -15,6 +15,7 @@ app.use(function (req, res, next) {
     next();
 });
 
+
 app.use('/api', addProduct);
 app.use('/api', fetchProduct);
 app.use('/api', fetchProductById);
@@ -26,5 +27,5 @@ app.listen(Port, () => {
 try {
     mongo.connect();
 } catch (err) {
-    console.log('error while connecting database'+err);
+    console.log('error while connecting database' + err);
 }
