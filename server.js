@@ -15,7 +15,6 @@ app.use(function (req, res, next) {
     next();
 });
 
-
 app.use('/api', addProduct);
 app.use('/api', fetchProduct);
 app.use('/api', fetchProductById);
