@@ -24,6 +24,7 @@ const Port = 5000;
 app.listen(Port, () => {
     console.log(`Server Running on Port ${Port}`)
 });
+
 try {
     mongo.connect();
 } catch (err) {
