@@ -19,12 +19,10 @@ app.use(function (req, res, next) {
 app.use('/api', addProduct);
 app.use('/api', fetchProduct);
 app.use('/api', fetchProductById);
-
 const Port = 5000;
 app.listen(Port, () => {
     console.log(`Server Running on Port ${Port}`)
 });
-
 try {
     mongo.connect();
 } catch (err) {
